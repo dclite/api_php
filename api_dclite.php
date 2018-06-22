@@ -16,7 +16,7 @@ class API_DCLite {
 	private $apiUrl = 'https://api.dclite.app/';
 
 	//check email
-	private $checkUrl = 'http://fix.dclite.app/check.php';
+	private $checkUrl = 'https://fix.dclite.app/check.php';
 
 	//constructor
 	public function __construct($username = null, $password = null) {
