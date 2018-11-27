@@ -1,4 +1,4 @@
 API_DCLite
 =========
 
-PHP class for working with API https://dclite.app/
+PHP class for working with API https://api.dclite.ru/

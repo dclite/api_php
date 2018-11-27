@@ -13,10 +13,10 @@ class API_DCLite {
 	private $password;
 
 	//pechkin mail api url
-	private $apiUrl = 'https://api.dclite.app/';
+	private $apiUrl = 'https://api.dclite.ru/';
 
 	//check email
-	private $checkUrl = 'https://fix.dclite.app/check.php';
+	private $checkUrl = 'https://fix.dclite.ru/check.php';
 
 	//constructor
 	public function __construct($username = null, $password = null) {
