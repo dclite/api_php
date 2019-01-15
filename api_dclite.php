@@ -167,7 +167,7 @@ class API_DCLite {
 	/*
 	required: name
 	optional: abuse_email, abuse_name, company...
-	http://pechkin-mail.ru/?page=api_details&method=lists.add
+	http://dclite.ru/?page=api_details&method=lists.add
 	*/
 	public function lists_add($name = null, $params = array()) {
 		if (!is_null($name))
@@ -189,7 +189,7 @@ class API_DCLite {
 	/*
 	required: list_id
 	optional: name, abuse_email, abuse_name, company...
-	see: http://pechkin-mail.ru/?page=api_details&method=lists.update
+	see: http://dclite.ru/?page=api_details&method=lists.update
 	*/
 	public function lists_update($list_id = null, $params = array()) {
 		if (!is_null($list_id))
@@ -223,7 +223,7 @@ class API_DCLite {
 	/*
 	required: list_id
 	optional: state, start, limit...
-	see: http://pechkin-mail.ru/?page=api_details&method=lists.get_members
+	see: http://dclite.ru/?page=api_details&method=lists.get_members
 	*/
 	public function lists_get_members($list_id = null, $params = array()) {
 		if (!is_null($list_id))
@@ -238,7 +238,7 @@ class API_DCLite {
 	/*
 	required: list_id, file, email
 	optional: merge_1, merge_2, type, update...
-	see: http://pechkin-mail.ru/?page=api_details&method=lists.upload
+	see: http://dclite.ru/?page=api_details&method=lists.upload
 	*/
 	public function lists_upload($list_id = null, $file = null, $email = null, $params = array()) {
 		if (is_null($list_id) || is_null($email) || is_null($file))
@@ -255,7 +255,7 @@ class API_DCLite {
 	/*
 	required: list_id, email
 	optional: merge_1, merge_2..., update...
-	see: http://pechkin-mail.ru/?page=api_details&method=lists.add_member
+	see: http://dclite.ru/?page=api_details&method=lists.add_member
 	*/
 	public function lists_add_member($list_id = null, $email = null, $params = array()) {
 		if (is_null($list_id) || is_null($email))
@@ -273,7 +273,7 @@ class API_DCLite {
 	/*
 	required: member_id
 	optional: merge_1, merge_2...
-	see: http://pechkin-mail.ru/?page=api_details&method=lists.update_member
+	see: http://dclite.ru/?page=api_details&method=lists.update_member
 	*/
 	public function lists_update_member($member_id = null, $params = array()) {
 		if (!is_null($member_id))
@@ -299,7 +299,7 @@ class API_DCLite {
 	//lists.unsubscribe_member - Редактируем подписчика в базе
 	/*
 	optional: member_id, email, list_id
-	see: http://pechkin-mail.ru/?page=api_details&method=lists.unsubscribe_member
+	see: http://dclite.ru/?page=api_details&method=lists.unsubscribe_member
 	*/
 	public function lists_unsubscribe_member($params = array()) {
 		if (isset($params['email'])) {
@@ -338,7 +338,7 @@ class API_DCLite {
 	/*
 	required: list_id, type
 	optional: choises, title, ...
-	see: http://pechkin-mail.ru/?page=api_details&method=lists.add_merge
+	see: http://dclite.ru/?page=api_details&method=lists.add_merge
 	*/
 	public function lists_add_merge($list_id = null, $type = null, $params = array()) {
 		if (is_null($list_id) || is_null($type))
@@ -352,7 +352,7 @@ class API_DCLite {
 	/*
 	required: list_id, merge_id
 	optional: choisesm title, ...
-	see: http://pechkin-mail.ru/?page=api_details&method=lists.update_merge
+	see: http://dclite.ru/?page=api_details&method=lists.update_merge
 	*/
 	public function lists_update_merge($list_id = null, $merge_id = null, $params = array()) {
 		if (is_null($merge_id) || is_null($list_id))
@@ -365,7 +365,7 @@ class API_DCLite {
 	//lists.delete_merge - Удалить дополнительное поле из адресной базы
 	/*
 	required: list_id, merge_id
-	see: http://pechkin-mail.ru/?page=api_details&method=lists.delete_merge
+	see: http://dclite.ru/?page=api_details&method=lists.delete_merge
 	*/
 	public function lists_delete_merge($list_id = null, $merge_id = null) {
 		if (is_null($merge_id) || is_null($list_id))
@@ -381,7 +381,7 @@ class API_DCLite {
 	//campaigns.get - Получаем список рассылок пользователя
 	/*
 	optional: campaign_id, status, list_id, type
-	see: http://pechkin-mail.ru/?page=api_details&method=campaigns.get
+	see: http://dclite.ru/?page=api_details&method=campaigns.get
 	*/
 	public function campaigns_get($params = array()) {
 		return $this->getData('campaigns.get', $params);
@@ -391,7 +391,7 @@ class API_DCLite {
 	/*
 	required: list_id
 	optional: name, subject, ...
-	see: http://pechkin-mail.ru/?page=api_details&method=campaigns.create
+	see: http://dclite.ru/?page=api_details&method=campaigns.create
 	*/
 	public function campaigns_create($list_id = null, $params = array()) {
 		if (!is_array($list_id))
@@ -405,7 +405,7 @@ class API_DCLite {
 	//campaigns.create_auto - Создаем авторассылку
 	/*
 	optional: list_id, name, subject
-	see: http://pechkin-mail.ru/?page=api_details&method=campaigns.create_auto
+	see: http://dclite.ru/?page=api_details&method=campaigns.create_auto
 	*/
 	public function campaigns_create_auto($params = array()) {
 		$params['list_id'] = serialize($params['list_id']);
@@ -416,7 +416,7 @@ class API_DCLite {
 	/*
 	required: campaign_id
 	optional: list_id, name, subject, ...
-	see: http://pechkin-mail.ru/?page=api_details&method=campaigns.update
+	see: http://dclite.ru/?page=api_details&method=campaigns.update
 	*/
 	public function campaigns_update($campaign_id = null, $params = array()) {
 		if (is_null($campaign_id))
@@ -432,7 +432,7 @@ class API_DCLite {
 	/*
 	required: campaign_id
 	optional: list_id, name, subject, ...
-	see: http://pechkin-mail.ru/?page=api_details&method=campaigns.update_auto
+	see: http://dclite.ru/?page=api_details&method=campaigns.update_auto
 	*/
 	public function campaigns_update_auto($campaign_id = null, $params = array()) {
 		if (is_null($campaign_id))
@@ -446,7 +446,7 @@ class API_DCLite {
 	//campaigns.delete - Удаляем рассылку
 	/*
 	required: campaign_id
-	see: http://pechkin-mail.ru/?page=api_details&method=campaigns.delete
+	see: http://dclite.ru/?page=api_details&method=campaigns.delete
 	*/
 	public function campaigns_delete($campaign_id = null) {
 		if (is_null($campaign_id))
@@ -459,7 +459,7 @@ class API_DCLite {
 	/*
 	required: campaign_id, url
 	optional: name
-	see: http://pechkin-mail.ru/?page=api_details&method=campaigns.attach
+	see: http://dclite.ru/?page=api_details&method=campaigns.attach
 	*/
 	public function campaigns_attach($campaign_id = null, $url = null, $params = array()) {
 		if (is_null($campaign_id) || is_null($url))
@@ -472,7 +472,7 @@ class API_DCLite {
 	//campaigns.get_attachments - Получаем приложенные файлы
 	/*
 	required: campaign_id
-	see: http://pechkin-mail.ru/?page=api_details&method=campaigns.get_attachments
+	see: http://dclite.ru/?page=api_details&method=campaigns.get_attachments
 	*/
 	public function campaigns_get_attachments($campaign_id = null, $params = array()) {
 		if (is_null($campaign_id))
@@ -485,7 +485,7 @@ class API_DCLite {
 	//campaigns.delete_attachments - Удаляем приложенный файл
 	/*
 	required: campaign_id, id
-	see: http://pechkin-mail.ru/?page=api_details&method=campaigns.delete_attachments
+	see: http://dclite.ru/?page=api_details&method=campaigns.delete_attachments
 	*/
 	public function campaigns_delete_attachments($campaign_id = null, $id = null, $params = array()) {
 		if (is_null($campaign_id) || is_null($id))
@@ -498,7 +498,7 @@ class API_DCLite {
 	//campaigns.get_templates - Получаем html шаблоны
 	/*
 	optional: name, id
-	see: http://pechkin-mail.ru/?page=api_details&method=campaigns.get_templates
+	see: http://dclite.ru/?page=api_details&method=campaigns.get_templates
 	*/
 	public function campaigns_get_templates($params = array()) {
 		return $this->getData('campaigns.get_templates', $params);
@@ -507,7 +507,7 @@ class API_DCLite {
 	//campaigns.add_template - Добавляем html шаблон
 	/*
 	required: name, template
-	see: http://pechkin-mail.ru/?page=api_details&method=campaigns.add_template
+	see: http://dclite.ru/?page=api_details&method=campaigns.add_template
 	*/
 	public function campaigns_add_template($name = null, $template = null) {
 		if (is_null($name) || is_null($template))
@@ -531,7 +531,7 @@ class API_DCLite {
 	/*
 	required: campaign_id, email
 	optional: delay
-	see: http://pechkin-mail.ru/?page=api_details&method=campaigns.force_auto
+	see: http://dclite.ru/?page=api_details&method=campaigns.force_auto
 	*/
 	public function campaigns_force_auto($campaign_id = null, $email = null, $params = array()) {
 		if (is_null($campaign_id) || is_null($email))
@@ -552,7 +552,7 @@ class API_DCLite {
 	/*
 	required: campaign_id
 	optional: start, limit, order
-	see: http://pechkin-mail.ru/?page=api_details&method=reports.send
+	see: http://dclite.ru/?page=api_details&method=reports.send
 	*/
 	public function reports_sent($campaign_id = null, $params = array()) {
 		if (is_null($campaign_id))
@@ -566,7 +566,7 @@ class API_DCLite {
 	/*
 	required: campaign_id
 	optional: start, limit, order
-	see: http://pechkin-mail.ru/?page=api_details&method=reports.delivered
+	see: http://dclite.ru/?page=api_details&method=reports.delivered
 	*/
 	public function reports_delivered($campaign_id = null, $params = array()) {
 		if (is_null($campaign_id))
@@ -580,7 +580,7 @@ class API_DCLite {
 	/*
 	required: campaign_id
 	optional: start, limit, order
-	see: http://pechkin-mail.ru/?page=api_details&method=reports.opened
+	see: http://dclite.ru/?page=api_details&method=reports.opened
 	*/
 	public function reports_opened($campaign_id = null, $params = array()) {
 		if (is_null($campaign_id))
@@ -594,7 +594,7 @@ class API_DCLite {
 	/*
 	required: campaign_id
 	optional: start, limit, order
-	see: http://pechkin-mail.ru/?page=api_details&method=reports.unsubscribed
+	see: http://dclite.ru/?page=api_details&method=reports.unsubscribed
 	*/
 	public function reports_unsubscribed($campaign_id = null, $params = array()) {
 		if (is_null($campaign_id))
@@ -608,7 +608,7 @@ class API_DCLite {
 	/*
 	required: campaign_id
 	optional: start, limit, order
-	see: http://pechkin-mail.ru/?page=api_details&method=reports.bounced
+	see: http://dclite.ru/?page=api_details&method=reports.bounced
 	*/
 	public function reports_bounced($campaign_id = null, $params = array()) {
 		if (is_null($campaign_id))
@@ -621,7 +621,7 @@ class API_DCLite {
 	//reports.clickstat - Cтатистика по кликам по различным url в письме
 	/*
 	required: campaign_id
-	see: http://pechkin-mail.ru/?page=api_details&method=reports.clickstat
+	see: http://dclite.ru/?page=api_details&method=reports.clickstat
 	*/
 	public function reports_clickstat($campaign_id = null) {
 		if (is_null($campaign_id))
@@ -633,7 +633,7 @@ class API_DCLite {
 	//reports.bouncestat - Cтатистика по всевозможным причинам возврата письма
 	/*
 	required: campaign_id
-	see: http://pechkin-mail.ru/?page=api_details&method=reports.bouncestat
+	see: http://dclite.ru/?page=api_details&method=reports.bouncestat
 	*/
 	public function reports_bouncestat($campaign_id = null) {
 		if (is_null($campaign_id))
@@ -645,7 +645,7 @@ class API_DCLite {
 	//reports.summary - Краткая статистика по рассылке
 	/*
 	required: campaign_id
-	see: http://pechkin-mail.ru/?page=api_details&method=reports.summary
+	see: http://dclite.ru/?page=api_details&method=reports.summary
 	*/
 	public function reports_summary($campaign_id = null) {
 		if (is_null($campaign_id))
@@ -657,7 +657,7 @@ class API_DCLite {
 	//reports.clients - Cтатистика по браузерам, ОС и почтовым клиентам
 	/*
 	required: campaign_id
-	see: http://pechkin-mail.ru/?page=api_details&method=reports.clients
+	see: http://dclite.ru/?page=api_details&method=reports.clients
 	*/
 	public function reports_clients($campaign_id = null) {
 		if (is_null($campaign_id))
@@ -669,7 +669,7 @@ class API_DCLite {
 	//reports.geo - Cтатистика по регионам открытия
 	/*
 	required: campaign_id
-	see: http://pechkin-mail.ru/?page=api_details&method=reports.geo
+	see: http://dclite.ru/?page=api_details&method=reports.geo
 	*/
 	public function reports_geo($campaign_id = null) {
 		if (is_null($campaign_id))
