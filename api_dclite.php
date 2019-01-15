@@ -1,7 +1,7 @@
 <?php
 
 /**
-* @author zhzhussupovkz@gmail.com
+* 
 * @copyright (c) 2018 DC Lite support@dclite.ru
 */
 class API_DCLite {
@@ -12,7 +12,7 @@ class API_DCLite {
 	//password for auth
 	private $password;
 
-	//pechkin mail api url
+	//DC Lite api url
 	private $apiUrl = 'https://api.dclite.ru/';
 
 	//check email
